@@ -223,10 +223,10 @@ var bumpReflectFragmentSource = [
     "  vec3 N = normalize(worldNormal);",
     "  vec3 R = 2.*dot(N,L)*N-L; ",
     "  vec3 V = worldEyeVec; ",
-    "  float diff = dot(N,L)*.6;",
+    "  float diff = abs(dot(N,L))*.6;",
     "  float amb = .3;",
-    "  float spec = (pow(dot(R,V),specCoeff) * .5);",
-    "  gl_FragColor = vec4(vec3(.7,.99,.7)*(amb+diff) + vec3(spec),1);",
+    "  float spec = (pow(abs(dot(R,V)), specCoeff) * .5);",
+    "  gl_FragColor = vec4(vec3(.7, .99, .7) * (amb + diff) + vec3(spec), 1);",
     "}"
 ].join("\n");
 
